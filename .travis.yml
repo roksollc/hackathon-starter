@@ -10,8 +10,6 @@ install:
   - npm install
 script:
   - echo "Doing the test." && npm test
-before_deploy:
-  - git stash drop
 deploy:
   - provider: script
     script: chmod +x ./deploy.sh && ./deploy.sh
