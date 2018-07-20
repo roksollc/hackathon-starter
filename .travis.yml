@@ -10,7 +10,7 @@ install:
   - npm install
 deploy:
   - provider: script
-    script: chmod +x deploy.sh && deploy.sh
+    script: ./deploy.sh
     on:
       branch: master
 script:
