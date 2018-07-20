@@ -8,10 +8,10 @@ cache:
 sudo: false
 install:
   - npm install
+script:
+  - echo "Doing the test." && npm test
 deploy:
   - provider: script
-    script: ./deploy.sh
+    script: chmod +x ./deploy.sh && ./deploy.sh
     on:
       branch: master
-script:
-  - npm test
