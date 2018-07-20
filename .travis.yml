@@ -9,10 +9,9 @@ sudo: false
 install:
   - npm install
 deploy:
-  provider: script
-  script: deploy.sh
-  skip_cleanup: true
-  on:
-    branch: master
+  - provider: script
+    script: "./deploy.sh"
+    on:
+      branch: master
 script:
   - npm test
