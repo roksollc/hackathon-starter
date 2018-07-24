@@ -1,17 +1,15 @@
 language: node_js
 node_js:
   - "8"
-services: mongodb  
-cache:  
-  directories:
-    - "node_modules"
-sudo: false
+services:
+  - mongodb
 install:
   - npm install
-script:
-  - echo "Doing the test." && npm test
 deploy:
-  - provider: script
-    script: chmod +x ./deploy.sh && ./deploy.sh
-    on:
-      branch: master
+  provider: script
+  skip_cleanup: true
+  script: /bin/sh deploy.sh
+  on:
+    branch: master
+script:
+  - npm test
