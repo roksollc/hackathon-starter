@@ -8,8 +8,6 @@ cache:
 sudo: false
 install:
   - npm install
-script:
-  - echo "Doing the test." && npm test
 deploy:
   - provider: script
     skip_cleanup: true
